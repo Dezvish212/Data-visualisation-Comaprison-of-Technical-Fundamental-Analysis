@@ -11,13 +11,13 @@ options(scipen = 999)
 
 # Define the directory containing your CSV files
 
-directory <- "C:/Users/Oscar Sibanda/Desktop/UofS/Data Visualisation/Coursework/Stock data/stock_market_data/sp500/csv"
+directory <- "APPl.csv file"
 
 
 # Get a list of all CSV files in the directory
 
 file_list <- list.files(directory, pattern = "*.csv", full.names = TRUE)
-sector_df1 <- read.csv("C:/Users/Oscar Sibanda/Desktop/UofS/Data Visualisation/Coursework/2018_Financial_Data.csv")
+sector_df1 <- read.csv("2018_Financial_Data.csv")
 
 # Function to read and process each file with ticker symbol
 
@@ -53,20 +53,6 @@ sector_df2 <- select(sector_df1, X,Revenue,EPS,EBITDA,NetDebt,MarketCap,Sector)
 
 # Filterout error rows 
 
-sector_df2 <- sector_df2[sector_df2$X!="IGLD",]
-sector_df2 <- sector_df2[sector_df2$X!="CEI",]
-sector_df2 <- sector_df2[sector_df2$X!="MEIP",]
-sector_df2 <- sector_df2[sector_df2$X!="RSLS",]
-sector_df2 <- sector_df2[sector_df2$X!="NMRK",]
-sector_df2 <- sector_df2[sector_df2$X!="BSAC",]
-sector_df2 <- sector_df2[sector_df2$X!="NVR",]
-sector_df2 <- sector_df2[sector_df2$X!="NTXP",]
-sector_df2 <- sector_df2[sector_df2$X!="SAEX",]
-sector_df2 <- sector_df2[sector_df2$X!="RRTS",]
-sector_df2 <- sector_df2[sector_df2$X!="JAGX",]
-sector_df2 <- sector_df2[sector_df2$X!="SLS",]
-sector_df2 <- sector_df2[sector_df2$X!="VIVE",]
-sector_df2 <- sector_df2[sector_df2$X!="TNXP",]
 
 sector_df2 <- sector_df2[sector_df2$EPS < 15,]
 sector_df2 <- sector_df2[sector_df2$EPS > -15,]
